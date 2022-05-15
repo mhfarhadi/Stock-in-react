@@ -4,7 +4,7 @@ import React from 'react';
 
 
 
-const Product = ({productName, count:propCount, children }) => {
+const Product = ({productName, count:propCount, children , onDelete , id }) => {
     
     const [count, setCount] = useState(propCount)
     return (
@@ -29,7 +29,7 @@ const Product = ({productName, count:propCount, children }) => {
 
 
     function deletex () {
-        setCount (0)
+        onDelete (id)
     }
 
 

@@ -12,7 +12,7 @@ function Products()  {
     return (
         <>
             {products.map((item,id) => (
-                <Product key={id} productName={item.productName} count={item.count}>
+                <Product onDelete={handleDelete} id={item.id} key={id} productName={item.productName} count={item.count}>
                     <p>
                         here is some memo.
                     </p>
@@ -20,6 +20,11 @@ function Products()  {
             ))}
         </>
     );
+
+    function handleDelete (productId){
+        const newProducts = products.filter(p => p.id !== productId);
+        setProducts(newProducts)
+    }
 }
 
 export default Products;
