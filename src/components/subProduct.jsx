@@ -17,6 +17,7 @@ class SubProduct extends Component {
                   <button className="btn-green" onClick={this.increment}>+</button>
                   <button className="btn-yellow" onClick={this.decrement}>-</button>
                   <button className="btn-red" onClick={this.delete}>Delete</button>
+                  <p>{this.props.children}</p>
 
              </div>
         );

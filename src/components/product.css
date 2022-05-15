@@ -3,7 +3,7 @@ body{
     
 }
 p{
-    font-size:xx-large;
+    font-size:large;
     font-weight: 800;
 }
 img{
@@ -44,4 +44,9 @@ span{
     margin: 2px;
     color: rgb(216, 216, 131);
     border-color:rgb(181, 181, 65);
+}
+
+div{
+    max-width: 600px;
+    margin: auto;
 }

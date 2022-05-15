@@ -1,8 +1,9 @@
 import React from "react"
-import MainProduct from "./components/mainProduct"
+import Products from "./components/functional/products"
+// import MainProduct from "./components/mainProduct"  //for class based componet active this line
 
 export default function App() {
   return (
-    <MainProduct/>
+    <Products/>
   )
 }

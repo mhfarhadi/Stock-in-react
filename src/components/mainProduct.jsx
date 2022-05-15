@@ -17,7 +17,7 @@ class MainProduct extends Component {
         return (
             <div>
                 {this.state.products.map((p,index) => (
-                    <SubProduct key={index} productName={p.productName} count={p.count}/>
+                    <SubProduct key={index} productName={p.productName} count={p.count}>Lorem ipsumunt quidem eveniet id.</SubProduct>
                 ))}
             </div>
         );

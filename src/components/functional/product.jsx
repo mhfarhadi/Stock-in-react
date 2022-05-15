@@ -1,18 +1,20 @@
 import { useState } from 'react';
-import './product.css'
+import '../product.css';
+import React from 'react';
 
 
 
-const Functional = () => {
-    const [count,setCount] = useState(0);
-    const [productName, setProductName] = useState('laptop')
+const Product = ({productName, count:propCount, children }) => {
+    
+    const [count, setCount] = useState(propCount)
     return (
-        <>
+        <div>
             <span >We have {format()} {productName} inStock. </span>
             <button className='btn-green' onClick={increment}>+</button>
             <button className='btn-yellow' onClick={decrement}>-</button>
             <button className='btn-red' onClick={deletex}>Delete</button>
-        </>
+            {children}
+        </div>
     );
 
 
@@ -43,4 +45,4 @@ const Functional = () => {
     }
 }
  
-export default Functional;
+export default Product;
