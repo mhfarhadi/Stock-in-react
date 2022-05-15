@@ -4,9 +4,9 @@ import React from 'react';
 
 
 
-const Product = ({productName, count:propCount, children , onDelete , id }) => {
+const Product = ({productName, count , children , onDelete, onIncrement , onDecrement , id }) => {
     
-    const [count, setCount] = useState(propCount)
+    
     return (
         <div className='subDiv'>
             <span >We have {format()} {productName} inStock. </span>
@@ -19,18 +19,20 @@ const Product = ({productName, count:propCount, children , onDelete , id }) => {
 
 
     function increment() {
-        setCount (count + 1)
+        onIncrement (id)
     }
 
 
     function decrement() {
-        setCount (count - 1)
+        onDecrement (id)
     }
 
 
     function deletex () {
         onDelete (id)
     }
+
+    
 
 
 

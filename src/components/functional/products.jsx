@@ -12,8 +12,17 @@ function Products()  {
     return (
         <>
             <span>Functional version.</span>
+            <button onClick={handleReset} className='btn-red'>Reset All</button>
             {products.map((item,id) => (
-                <Product onDelete={handleDelete} id={item.id} key={id} productName={item.productName} count={item.count}>
+                <Product 
+                    onDelete={handleDelete} 
+                    onIncrement={handleIncrement} 
+                    onDecrement={handleDecrement} 
+                    onReset={handleReset} 
+                    id={item.id} 
+                    key={id} 
+                    productName={item.productName} 
+                    count={item.count}>
                     <p>
                         here is some memo.
                     </p>
@@ -24,6 +33,28 @@ function Products()  {
 
     function handleDelete (productId){
         const newProducts = products.filter(p => p.id !== productId);
+        setProducts(newProducts)
+    }
+
+    function handleIncrement(productId) {
+        const newProducts = [...products];
+        const index = newProducts.findIndex(p=> p.id === productId);
+        newProducts[index].count += 1 ;
+        setProducts(newProducts)
+    }
+
+    function handleDecrement(productId) {
+        const newProducts = [...products];
+        const index = newProducts.findIndex(p=> p.id === productId);
+        newProducts[index].count -= 1 ;
+        setProducts(newProducts)
+    }
+
+    function handleReset() {
+        const newProducts = products.map(p => {
+            p.count = 0;
+            return p
+        });
         setProducts(newProducts)
     }
 }
