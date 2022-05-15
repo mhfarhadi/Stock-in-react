@@ -13,8 +13,10 @@ class Products extends Component {
     render() { 
         return (
             <>
+                <span>ClassBased version.</span>
+                <button onClick={this.handleReset} className='btn-red'>Reset All</button>
                 {this.state.products.map((p,index) => (
-                    <Product onDelete={this.handleDelete} id={p.id} key={index} productName={p.productName} count={p.count}>Lorem ipsumunt quidem eveniet id.</Product>
+                    <Product onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} onDelete={this.handleDelete} id={p.id} key={index} productName={p.productName} count={p.count}>Lorem ipsumunt quidem eveniet id.</Product>
                 ))}
             </>
         );
@@ -23,6 +25,29 @@ class Products extends Component {
     handleDelete = (productId) =>{
         const newProducts = this.state.products.filter(p => p.id !== productId)
         this.setState({products : newProducts})
+    }
+
+
+    handleIncrement = (productId) => {
+        const newProducts = [...this.state.products];
+        const index = newProducts.findIndex(p=> p.id === productId);
+        newProducts[index].count += 1 ;
+        this.setState({products : newProducts});    
+    }
+
+    handleDecrement = (productId) => {
+        const newProducts = [...this.state.products];
+        const index = newProducts.findIndex(p=> p.id === productId);
+        newProducts[index].count -= 1 ;
+        this.setState({products : newProducts});    
+    }
+
+    handleReset = () => {
+        const newProducts = this.state.products.map(p => {
+            p.count = 0;
+            return p
+        });
+        this.setState({products : newProducts});
     }
 }
  

@@ -4,20 +4,18 @@ import './product.css';
 
 
 class Product extends Component {
-    state = {
-        count : this.props.count
-        
-    }
+    
     render() { 
         const {productName} = this.props
         return (
-            <div className="subDiv">
-                  <span className="span"> We have {this.format()} <b>{productName}</b> in Stock.</span>
-                  
-                  <button className="btn-green" onClick={this.increment}>+</button>
-                  <button className="btn-yellow" onClick={this.decrement}>-</button>
-                  <button className="btn-red" onClick={this.delete}>Delete</button>
-                  <p>{this.props.children}</p>
+            <div  className="subDiv">
+                <>
+                    <span className="span"> We have {this.format()} <b>{productName}</b> in Stock.</span>
+                    <button className="btn-green" onClick={this.increment}>+</button>
+                    <button className="btn-yellow" onClick={this.decrement}>-</button>
+                    <button className="btn-red" onClick={this.delete}>Delete</button>
+                    <p>{this.props.children}</p>
+                </>
 
              </div>
         );
@@ -25,14 +23,12 @@ class Product extends Component {
 
 
     increment = () => {
-        const {count} = this.state;
-        this.setState({count : count+1});
+        this.props.onIncrement(this.props.id)
     }
 
 
     decrement = () => {
-        const {count} = this.state;
-        this.setState({count : count-1})
+        this.props.onDecrement(this.props.id)
     }
 
 
@@ -43,12 +39,12 @@ class Product extends Component {
 
 
     format = () => {
-        if (this.state.count ===0 ) {
+        if (this.props.count ===0 ) {
             
             return 'no'
             
         } else {
-            return this.state.count 
+            return this.props.count 
         }
     }
 }

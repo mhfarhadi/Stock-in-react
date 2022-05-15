@@ -11,6 +11,7 @@ function Products()  {
     ])
     return (
         <>
+            <span>Functional version.</span>
             {products.map((item,id) => (
                 <Product onDelete={handleDelete} id={item.id} key={id} productName={item.productName} count={item.count}>
                     <p>
