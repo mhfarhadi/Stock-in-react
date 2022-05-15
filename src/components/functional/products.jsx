@@ -14,7 +14,7 @@ function Products()  {
             {products.map((p,index) => (
                 <Product key={index} productName={p.productName} count={p.count}>
                     <p>
-                        lorem lorem lorem kossher
+                        here is some memo.
                     </p>
                 </Product> 
             ))}

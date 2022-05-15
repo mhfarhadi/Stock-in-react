@@ -8,7 +8,7 @@ const Product = ({productName, count:propCount, children }) => {
     
     const [count, setCount] = useState(propCount)
     return (
-        <div>
+        <div className='subDiv'>
             <span >We have {format()} {productName} inStock. </span>
             <button className='btn-green' onClick={increment}>+</button>
             <button className='btn-yellow' onClick={decrement}>-</button>
