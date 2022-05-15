@@ -3,7 +3,7 @@ import './product.css';
 
 
 
-class SubProduct extends Component {
+class Product extends Component {
     state = {
         count : this.props.count
         
@@ -11,7 +11,7 @@ class SubProduct extends Component {
     render() { 
         const {productName} = this.props
         return (
-            <div>
+            <div className="subDiv">
                   <span className="span"> We have {this.format()} <b>{productName}</b> in Stock.</span>
                   
                   <button className="btn-green" onClick={this.increment}>+</button>
@@ -37,8 +37,7 @@ class SubProduct extends Component {
 
 
     delete = () => {
-        const {count} = this.state;
-        this.setState({count : 0});
+        this.props.onDelete(this.props.id)
     }
 
 
@@ -54,7 +53,7 @@ class SubProduct extends Component {
     }
 }
  
-export default SubProduct;
+export default Product;
 
 
 
