@@ -11,8 +11,8 @@ function Products()  {
     ])
     return (
         <>
-            {products.map((p,index) => (
-                <Product key={index} productName={p.productName} count={p.count}>
+            {products.map((item,id) => (
+                <Product key={id} productName={item.productName} count={item.count}>
                     <p>
                         here is some memo.
                     </p>
