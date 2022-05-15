@@ -5,14 +5,20 @@ import SubProduct from './subProduct';
 
 
 class MainProduct extends Component {
-    state = {  } 
+    state = { 
+        products: [
+            {id:1 , count: 28 , productName:'Laptop'} ,
+            {id:2 , count: 32 , productName:'Mobile'} ,
+            {id:3 , count: 13 , productName:'Tablet'} ,
+            {id:4 , count: 217 , productName:'Accessory'} 
+        ]
+     } 
     render() { 
         return (
             <div>
-                <SubProduct productName='Laptop'/>
-                <SubProduct productName='Mobile'/>
-                <SubProduct productName='Tablet'/>
-                <SubProduct productName='XBox'/>
+                {this.state.products.map((p,index) => (
+                    <SubProduct key={index} productName={p.productName} count={p.count}/>
+                ))}
             </div>
         );
     }

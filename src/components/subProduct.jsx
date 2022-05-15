@@ -5,13 +5,14 @@ import './product.css';
 
 class SubProduct extends Component {
     state = {
-        count : 0,
+        count : this.props.count
         
     }
     render() { 
+        const {productName} = this.props
         return (
             <div>
-                  <span className="span"> We have {this.format()} <b>{this.props.productName}</b> in Stock.</span>
+                  <span className="span"> We have {this.format()} <b>{productName}</b> in Stock.</span>
                   
                   <button className="btn-green" onClick={this.increment}>+</button>
                   <button className="btn-yellow" onClick={this.decrement}>-</button>
