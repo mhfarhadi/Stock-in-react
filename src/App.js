@@ -1,8 +1,8 @@
 import React from "react"
-import Products from "./components/functional"
+import Functinal from "./components/functional"
 
 export default function App() {
   return (
-    <Products/>
+    <Functinal/>
   )
 }
