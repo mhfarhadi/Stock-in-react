@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import Product from "./product";
 
-const Products= () => {
+function Products()  {
     const [products ,setProducts] = useState ([
         {id:1 , count : 34 , productName : 'Laptop'},
         {id:2 , count : 64 , productName : 'Mobile'},
