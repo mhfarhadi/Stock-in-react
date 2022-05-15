@@ -1,6 +1,6 @@
 import './product.css'
 const Products = () => {
-    return (  <p>Hello world.</p>);
+    return (  <p>Hello myWorld</p>);
 }
  
 export default Products;
